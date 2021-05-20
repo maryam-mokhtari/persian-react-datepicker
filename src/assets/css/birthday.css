@@ -1,0 +1,9 @@
+.birthday {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid;
+  margin: 30px 70px;
+  border-radius: 12px;
+}

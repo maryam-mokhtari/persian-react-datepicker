@@ -1,12 +1,15 @@
 .date-picker {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  border-top:  1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding: 0;
-  position: relative;
+  margin-bottom: 16px;
+  border-top:  1px solid #fcfcfc;
+  border-bottom: 1px solid #fcfcfc;
+  max-width: 448px;
+  width: 100%;
+  margin: auto;
 }
 .date-picker::after {
   content: '';
@@ -15,7 +18,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  box-shadow: white 0px 80px 60px -3em inset, white 0px -80px 60px -3em inset;
+  box-shadow: white 0px 100px 50px -3em inset, white 0px -100px 50px -3em inset;
   pointer-events: none;
 }
 

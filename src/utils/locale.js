@@ -47,6 +47,10 @@ const text = {
     FA: 'اسفند',
     EN: '',
   },
+  BIRTHDAY: {
+    FA: 'تولد',
+    EN: '',
+  }
 }
 
 String.prototype.Capitalize = function () { return this[0].toUpperCase() + this.substr(1).toLowerCase() }
