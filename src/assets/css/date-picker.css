@@ -28,8 +28,8 @@
   border: 0;
   border-radius: 0;
   outline: none;
-  padding: 40px 0;
-  height: 190px;
+  /* padding: 40px 0; */
+  /* height: 190px; */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
