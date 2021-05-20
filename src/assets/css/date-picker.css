@@ -28,9 +28,7 @@
   border: 0;
   border-radius: 0;
   outline: none;
-  /* padding: 40px 0; */
-  /* height: 190px; */
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-snap-type: y mandatory;
 }
 .select::-webkit-scrollbar {
@@ -44,8 +42,4 @@
   scroll-snap-align: center;
   scroll-snap-stop: linear;
   cursor: pointer;
-}
-.option.selected {
-  color: #037192;
-  font-weight: bold;
 }
