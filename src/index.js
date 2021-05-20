@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
-import Button from './components/Button';
+import PersianDatePicker from './components/PersianDatePicker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Button />
+    <PersianDatePicker />
   </React.StrictMode>,
   document.getElementById('root')
 );
