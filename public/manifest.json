@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "calendar-192.png",
+      "src": "persian-date-picker-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "calendar-512.png",
+      "src": "persian-date-picker-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
