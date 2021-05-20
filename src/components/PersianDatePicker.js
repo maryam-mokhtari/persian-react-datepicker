@@ -3,14 +3,15 @@ import '../assets/css/date-picker.css';
 import moment from 'moment-jalaali';
 import months from '../utils/months';
 import localeText from '../utils/locale';
-import { getPersianNumber } from '../utils/number';
-import themeColors from '../utils/theme'
+import { getNumber } from '../utils/number';
+import themeColors from '../utils/theme';
 
 const PersianDatePicker = ({
   onChange,
   value = moment(),
   maxYear = moment().jYear(),
   themeColor = "black",
+  language = 'fa',
 }) => {
   const [day, setDay] = useState(value.jDate())
   const [month, setMonth] = useState(value.jMonth() + 1)
@@ -22,7 +23,6 @@ const PersianDatePicker = ({
   const yearElement = useRef()
 
   const optionHeight = 40
-  const shownCount = 5
 
   useEffect(() => {
 
@@ -62,7 +62,10 @@ const PersianDatePicker = ({
     }) : ({})
 
   return (
-    <div className="date-picker">
+    <div 
+      className="date-picker"
+      style={{fontFamily: language.toLowerCase() === 'fa'? 'yekan' : 'arial'}}
+    >
       <div
         ref={dayElement}
         className="select"
@@ -78,7 +81,7 @@ const PersianDatePicker = ({
               setDay(index + 1)
               e.target.parentElement.scrollTop = index * optionHeight
             }}>
-            {getPersianNumber(index + 1)}
+            {getNumber(index + 1, language)}
           </div>
         )}
       </div>
@@ -97,7 +100,7 @@ const PersianDatePicker = ({
               setMonth(index + 1)
               e.target.parentElement.scrollTop = index * optionHeight
             }}>
-            {localeText[m]}
+            {localeText(language.toUpperCase())[m]}
           </div>
         )}
       </div>
@@ -116,7 +119,7 @@ const PersianDatePicker = ({
               setYear(maxYear - index)
               e.target.parentElement.scrollTop = index * optionHeight
             }}>
-            {getPersianNumber(maxYear - index)}
+            {getNumber(maxYear - index, language)}
           </div>
         )
         }

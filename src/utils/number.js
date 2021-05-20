@@ -6,3 +6,7 @@ Array.from(number.toString()).map(
   char : 
   Array.from(numbers)[Number(char)]
 ).join('')
+
+export const getNumber = (number, language) => {
+  return language.toLowerCase() === 'fa' ? getPersianNumber(number) : number
+}

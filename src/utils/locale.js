@@ -1,11 +1,9 @@
-const language = 'FA'
-
 const text = {
   FARVARDIN: {
-    FA: 'فروردین', 
+    FA: 'فروردین',
     EN: '',
   },
-  ORDIBEHESHT:{
+  ORDIBEHESHT: {
     FA: 'اردیبهشت',
     EN: '',
   },
@@ -51,9 +49,11 @@ const text = {
   },
 }
 
-const localeText = 
+String.prototype.Capitalize = function () { return this[0].toUpperCase() + this.substr(1).toLowerCase() }
+
+const localeText = (language = 'FA') =>
   Object.keys(text).reduce(
-    (newText, key) => ({...newText, [key]: text[key][language]}), {}
+    (newText, key) => ({ ...newText, [key]: text[key][language] || key.Capitalize() }), {}
   )
 
 export default localeText
