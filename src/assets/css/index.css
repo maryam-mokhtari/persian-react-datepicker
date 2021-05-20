@@ -7,10 +7,6 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
-  color: #444;
-  font-family: yekan, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior-x: none;
@@ -22,4 +18,12 @@ html, body {
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+* {
+  font-size: 1rem;
+  box-sizing: border-box;
+  direction: rtl;
+  color: #444;
+  font-family: yekan, sans-serif;
 }

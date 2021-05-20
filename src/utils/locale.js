@@ -47,17 +47,17 @@ const text = {
     FA: 'اسفند',
     EN: '',
   },
-  BIRTHDAY: {
-    FA: 'تولد',
+  DATE: {
+    FA: 'تاریخ',
     EN: '',
   }
 }
 
-String.prototype.Capitalize = function () { return this[0].toUpperCase() + this.substr(1).toLowerCase() }
+const Capitalize =  textString => textString[0].toUpperCase() + textString.substr(1).toLowerCase()
 
 const localeText = (language = 'FA') =>
   Object.keys(text).reduce(
-    (newText, key) => ({ ...newText, [key]: text[key][language] || key.Capitalize() }), {}
+    (newText, key) => ({ ...newText, [key]: text[key][language] || Capitalize(key) }), {}
   )
 
 export default localeText

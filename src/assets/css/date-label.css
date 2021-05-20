@@ -1,0 +1,11 @@
+.date-label {
+  max-width: 384px;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border: 1px solid;
+  margin: 50px auto;
+  border-radius: 12px;
+}

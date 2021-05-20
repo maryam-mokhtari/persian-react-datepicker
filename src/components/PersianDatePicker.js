@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../assets/css/date-picker.css';
 import moment from 'moment-jalaali';
 import months from '../utils/months';
@@ -7,64 +7,66 @@ import { getNumber } from '../utils/number';
 import themeColors from '../utils/theme';
 
 const PersianDatePicker = ({
-  onChange,
   value = moment(),
+  onChange,
   maxYear = moment().jYear(),
+  minYear = 1301,
   themeColor = "black",
   language = 'fa',
 }) => {
   const [day, setDay] = useState(value.jDate())
   const [month, setMonth] = useState(value.jMonth() + 1)
   const [year, setYear] = useState(value.jYear())
-  // console.log(day, month, year);
 
   const dayElement = useRef()
   const monthElement = useRef()
   const yearElement = useRef()
 
   const optionHeight = 40
+  const count = 5
+  const margin = 10
 
   useEffect(() => {
+    const date = moment([year, month, day].join('/'), 'jYYYY/jM/jD')
+    if (typeof onChange === 'function' && date.format('jYYYY/jM/jD') !== value.format('jYYYY/jM/jD')) {
+      onChange(date)
+    }
 
-    dayElement.current.scrollTop = (day - 1) * optionHeight
-    monthElement.current.scrollTop = (month - 1) * optionHeight
-    yearElement.current.scrollTop = (maxYear - year) * optionHeight
-  }, [])
+    dayElement.current.scrollTop = (day - 1) * optionHeight - margin
+    monthElement.current.scrollTop = (month - 1) * optionHeight - margin
+    yearElement.current.scrollTop = (year - minYear) * optionHeight - margin
 
-  useEffect(() => {
-    const date = moment([year, month, day].join('/'), 'jYYYY/jM/jD').format()
-    console.log(year, month, day, date);
-    typeof onChange === 'function' && onChange(new Date(date).getTime())
+  }, [day, month, year, minYear, value, onChange])
 
-  }, [day, month, year, onChange])
-
-  const leapYears = [0, 34, 8, 13, 17, 21, 25, 29, 33, 37, 41, 46, 50, 54, 58, 62, 66, 70, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 120, 124]
-  const daysRange = month <= 6 ? 31 : month < 12 ? 30 : leapYears.includes(year - 1300) ? 30 : 29
+  const daysRange = month <= 6 ? 31 : month < 12 ? 30 : moment.jIsLeapYear(year) ? 30 : 29
 
   const getDateElement = e => {
     e.stopPropagation()
-    return Math.round((e.target.scrollTop) / optionHeight) + 1
+    return Math.round((e.target.scrollTop + margin) / optionHeight)
   }
 
-  const scrollDay = e => setDay(getDateElement(e))
-  const scrollMonth = e => setMonth(getDateElement(e))
-  const scrollYear = e => setYear(maxYear - getDateElement(e) + 1)
+  const scrollDay = e => setDay(getDateElement(e) + 1)
+  const scrollMonth = e => setMonth(getDateElement(e) + 1)
+  const scrollYear = e => setYear(getDateElement(e) + minYear)
 
   const selectStyle = {
     padding: `${2 * optionHeight}px 0`,
-    height: optionHeight,
+    height: optionHeight * count - margin,
   }
 
   const getOptionStyle = value => value ?
     ({
       fontWeight: 'bold',
       color: themeColors[themeColor] || themeColor,
-    }) : ({})
+      height: optionHeight
+    }) : ({
+      height: optionHeight
+    })
 
   return (
-    <div 
+    <div
       className="date-picker"
-      style={{fontFamily: language.toLowerCase() === 'fa'? 'yekan' : 'arial'}}
+      style={{ fontFamily: language.toLowerCase() === 'fa' ? 'yekan' : 'arial' }}
     >
       <div
         ref={dayElement}
@@ -79,7 +81,7 @@ const PersianDatePicker = ({
             className="option"
             onClick={e => {
               setDay(index + 1)
-              e.target.parentElement.scrollTop = index * optionHeight
+              e.target.parentElement.scrollTop = index * optionHeight - margin
             }}>
             {getNumber(index + 1, language)}
           </div>
@@ -98,7 +100,7 @@ const PersianDatePicker = ({
             className="option"
             onClick={e => {
               setMonth(index + 1)
-              e.target.parentElement.scrollTop = index * optionHeight
+              e.target.parentElement.scrollTop = index * optionHeight - margin
             }}>
             {localeText(language.toUpperCase())[m]}
           </div>
@@ -110,16 +112,16 @@ const PersianDatePicker = ({
         style={selectStyle}
         onScroll={e => scrollYear(e)}
       >
-        {Array(maxYear - 1300).fill().map((y, index) =>
+        {Array(maxYear - minYear + 1).fill().map((y, index) =>
           <div
             key={index}
-            style={getOptionStyle(year === maxYear - index)}
+            style={getOptionStyle(year === index + minYear)}
             className="option"
             onClick={e => {
-              setYear(maxYear - index)
-              e.target.parentElement.scrollTop = index * optionHeight
+              setYear(index + minYear)
+              e.target.parentElement.scrollTop = index * optionHeight - margin
             }}>
-            {getNumber(maxYear - index, language)}
+            {getNumber(index + minYear, language)}
           </div>
         )
         }

@@ -18,7 +18,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  box-shadow: white 0px 100px 50px -3em inset, white 0px -100px 50px -3em inset;
+  box-shadow: white 0px 80px 50px -3em inset, white 0px -80px 50px -3em inset;
   pointer-events: none;
 }
 
