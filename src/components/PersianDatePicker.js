@@ -39,9 +39,7 @@ const PersianDatePicker= ({ onSubmit, maxBirthYear=1390 }) => {
           {Array(daysRange).fill().map((d, index) =>
             <div className="option"
               key={index}
-              value={index + 1}
-              selected={day === index + 1}
-              className={day === index + 1 ? 'selected' : ''}
+              className={`option ${day === index + 1 ? 'selected' : ''}`}
               onClick={e => {
                 setDay(index + 1)
               }}>
@@ -51,11 +49,9 @@ const PersianDatePicker= ({ onSubmit, maxBirthYear=1390 }) => {
         </div>
         <div className="select" onScroll={e => scrollMonth(e) }>
           {months.map((m, index) =>
-            <div className="option"
+            <div
               key={index}
-              value={index + 1}
-              selected={month === index + 1}
-              className={month === index + 1 ? 'selected' : ''}
+              className={`option ${month === index + 1 ? 'selected' : ''}`}
               onClick={e => {
                 setMonth(index + 1)
               }}>
@@ -65,11 +61,9 @@ const PersianDatePicker= ({ onSubmit, maxBirthYear=1390 }) => {
         </div>
         <div className="select" onScroll={e => scrollYear(e) }>
           {Array(maxBirthYear - 1300).fill().map((y, index) =>
-            <div className="option"
+            <div
               key={index}
-              value={maxBirthYear - index}
-              selected={year === maxBirthYear - index}
-              className={year === maxBirthYear - index ? 'selected' : ''}
+              className={`option ${year === maxBirthYear - index ? 'selected' : ''}`}
               onClick={e => {
                 setYear(maxBirthYear - index)
               }}>
