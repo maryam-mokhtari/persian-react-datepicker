@@ -1,0 +1,51 @@
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-top:  1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 0;
+  position: relative;
+}
+.date-picker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: white 0px 80px 60px -3em inset, white 0px -80px 60px -3em inset;
+  pointer-events: none;
+}
+
+.select {
+  width: 30%;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: white;
+  color: #777;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  padding: 40px 0;
+  height: 190px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.select::-webkit-scrollbar {
+  width: 0;
+}
+
+.option {
+  padding: 8px;
+  border-radius: 12px;
+  color: #777;
+  scroll-snap-align: center;
+  scroll-snap-stop: linear;
+  cursor: pointer;
+}
+.option.selected {
+  color: #037192;
+  font-weight: bold;
+}
