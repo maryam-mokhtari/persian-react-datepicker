@@ -1,7 +1,32 @@
 {
   "name": "persian-react-date-picker",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Maryam Mokhtari",
+    "email": "maryam.mokhtari@gmail.com"
+  },
+  "license": "MIT",
+  "description": "Persian React Date Picker simulates iOS Date Picker for Progressive Web Applications. (PWA)",
+  "keywords": [
+    "PWA",
+    "Progressive Web Application",
+    "jalaali",
+    "Shamsi",
+    "Persian",
+    "React",
+    "React Date Picker",
+    "Persian Date Picker",
+    "Persian React Date Picker",
+    "Persian Calendar"
+  ],
+  "homepage": "https://github.com/mayyamak/persian-react-date-picker",
+  "bugs": {
+    "url": "https://github.com/mayyamak/persian-react-date-picker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mayyamak/persian-react-date-picker.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
