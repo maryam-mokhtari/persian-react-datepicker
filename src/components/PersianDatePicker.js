@@ -3,6 +3,7 @@ import '../assets/css/date-picker.css';
 import moment from 'jalali-moment';
 import months from '../utils/months';
 import localeText from '../utils/locale';
+import { getPersianNumber } from '../utils/number';
 
 const PersianDatePicker = ({ onSubmit, maxBirthYear = 1390 }) => {
   const [day, setDay] = useState()
@@ -43,7 +44,7 @@ const PersianDatePicker = ({ onSubmit, maxBirthYear = 1390 }) => {
             onClick={e => {
               setDay(index + 1)
             }}>
-            {index + 1}
+            {getPersianNumber(index + 1)}
           </div>
         )}
       </div>
@@ -67,7 +68,7 @@ const PersianDatePicker = ({ onSubmit, maxBirthYear = 1390 }) => {
             onClick={e => {
               setYear(maxBirthYear - index)
             }}>
-            {maxBirthYear - index}
+            {getPersianNumber(maxBirthYear - index)}
           </div>
         )
         }
