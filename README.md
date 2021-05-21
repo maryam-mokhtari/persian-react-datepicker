@@ -3,7 +3,7 @@
 This project is mainly developed to simulate IOS Date Picker for Progressive Web Applications with Persian Jalaali-Shamsi Date.
 
 ## Demo
-![](https://github.com/mayyamak/persian-react-date-picker/images/persian-react-date-picker-demo.gif)
+![](https://raw.githubusercontent.com/mayyamak/persian-react-date-picker/master/images/persian-react-date-picker-demo.gif)
 ## Usage
 
 In the project directory, you can use the following commands:
