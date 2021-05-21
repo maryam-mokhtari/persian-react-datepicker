@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
-import App from './App';
+import PersianDatePicker from './components/PersianDatePicker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PersianDatePicker />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+export default PersianDatePicker

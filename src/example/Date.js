@@ -5,7 +5,7 @@ import moment from 'moment-jalaali';
 import './assets/css/date-label.css'
 import themeColors from "./utils/theme";
 
-const App = () => {
+const Date = () => {
   const [date, setDate] = useState(moment('1361-7-7', 'jYYYY-jM-jD'))
   const color = "black"
   return <>
@@ -32,4 +32,4 @@ const App = () => {
   </>
 }
 
-export default App
+export default Date
