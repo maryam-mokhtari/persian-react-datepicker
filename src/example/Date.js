@@ -1,9 +1,9 @@
 import { useState } from "react";
-import PersianDatePicker from "./components/PersianDatePicker";
-import localeText from "./utils/locale";
 import moment from 'moment-jalaali';
-import './assets/css/date-label.css'
-import themeColors from "./utils/theme";
+import PersianDatePicker from "../components/PersianDatePicker";
+import localeText from "../utils/locale";
+import '../assets/css/date-label.css'
+import themeColors from "../utils/theme";
 
 const Date = () => {
   const [date, setDate] = useState(moment('1361-7-7', 'jYYYY-jM-jD'))
