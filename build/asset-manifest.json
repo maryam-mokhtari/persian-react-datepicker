@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mayyamak/persian-react-date-picker/static/css/main.32b66820.chunk.css",
+    "main.js": "/mayyamak/persian-react-date-picker/static/js/main.8bb9e465.chunk.js",
+    "main.js.map": "/mayyamak/persian-react-date-picker/static/js/main.8bb9e465.chunk.js.map",
+    "runtime-main.js": "/mayyamak/persian-react-date-picker/static/js/runtime-main.3618cad9.js",
+    "runtime-main.js.map": "/mayyamak/persian-react-date-picker/static/js/runtime-main.3618cad9.js.map",
+    "static/js/2.dd45743d.chunk.js": "/mayyamak/persian-react-date-picker/static/js/2.dd45743d.chunk.js",
+    "static/js/2.dd45743d.chunk.js.map": "/mayyamak/persian-react-date-picker/static/js/2.dd45743d.chunk.js.map",
+    "index.html": "/mayyamak/persian-react-date-picker/index.html",
+    "static/css/main.32b66820.chunk.css.map": "/mayyamak/persian-react-date-picker/static/css/main.32b66820.chunk.css.map",
+    "static/js/2.dd45743d.chunk.js.LICENSE.txt": "/mayyamak/persian-react-date-picker/static/js/2.dd45743d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/mayyamak/persian-react-date-picker/static/media/yekan.012789e6.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3618cad9.js",
+    "static/js/2.dd45743d.chunk.js",
+    "static/css/main.32b66820.chunk.css",
+    "static/js/main.8bb9e465.chunk.js"
+  ]
+}
